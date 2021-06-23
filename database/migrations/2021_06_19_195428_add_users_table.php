@@ -29,7 +29,7 @@ class AddUsersTable extends Migration
             $table->tinyInteger('plan_id')->nullable();
             $table->dateTime('next_expiration')->nullable();
             $table->dateTime('disabled_account')->nullable();
-            $table->dateTime('delete_account')->nullable();
+            $table->dateTime('  ')->nullable();
             $table->tinyInteger('status')->nullable()->default(1);
             $table->softDeletes();
         });
