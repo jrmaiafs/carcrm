@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     public function store(Request $request) {
+
         $validator = Validator::make($request->all(), [
             'name' =>  'required|string|max:255',
             'email' =>  'required|string|email|max:255|unique:users',
@@ -21,7 +22,6 @@ class AuthController extends Controller
         if ( $validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         };
-
         $date = Carbon::now();
         $delete_account = Carbon::now();
 
